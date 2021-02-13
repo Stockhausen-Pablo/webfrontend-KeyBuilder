@@ -1,1 +1,1 @@
-export {default as KeyboardBuilderRegularUser} from './KeyboardBuilder';
+export {default as ModelBuilderRegularUser} from './ModelBuilder';

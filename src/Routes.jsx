@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 
 import {
-    KeyboardBuilderRegularUser
+    ModelBuilderRegularUser
 } from './views/regularUser';
 
 import {compose} from 'recompose';
@@ -17,7 +17,7 @@ function Routes(props){
                 to="/builder"
             />
             <Route
-                component={KeyboardBuilderRegularUser}
+                component={ModelBuilderRegularUser}
                 exact
                 path="/builder"
             />
