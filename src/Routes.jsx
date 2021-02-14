@@ -11,11 +11,6 @@ function Routes(props){
     //props later logged in /out
     return(
         <Switch>
-            <Redirect
-                exact
-                from="/"
-                to="/builder"
-            />
             <Route
                 component={ModelBuilderRegularUser}
                 exact
