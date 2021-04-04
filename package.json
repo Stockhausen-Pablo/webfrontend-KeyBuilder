@@ -8,9 +8,14 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/three": "^0.125.1",
+    "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
+    "classnames": "^2.3.1",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
     "history": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-colorful": "^5.0.0",
@@ -30,8 +35,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {

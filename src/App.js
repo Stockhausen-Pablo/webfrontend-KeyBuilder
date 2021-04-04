@@ -14,9 +14,9 @@ const browserHistory = createBrowserHistory();
 export default class App extends Component {
   render(){
     return(
-        <Router history={browserHistory}>
-          <Routes/>
-        </Router>
+      <Router history={browserHistory}>
+        <Routes/>
+      </Router>
     )
   }
-};
+}
