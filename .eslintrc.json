@@ -4,11 +4,6 @@
         "es2021": true,
         "node": true
     },
-    "extends": "eslint:recommended",
-    "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true
-    },
     "extends": [
         "eslint:recommended"
     ],
@@ -24,7 +19,7 @@
         "react"
     ],
     "rules": {
-        "no-console": "error",
+        "no-console": "warn",
         "comma-dangle": 0,
         "indent": [
             2,

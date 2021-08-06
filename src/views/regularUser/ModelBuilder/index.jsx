@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Grid, withStyles} from '@material-ui/core';
 import styles from './styles'
 import {compose} from 'recompose';
@@ -9,40 +9,65 @@ import classNames from 'classnames';
 import {KeyboardBuilder} from '../../../components';
 import NavLayout from '../../../layouts/NavLayout';
 
-function ModelBuilder(props){
+import Paper from '@material-ui/core/Paper';
+import KeyboardPartSelector from '../../../components/KeyboardPartSelector';
+
+function ModelBuilder(props) {
 
   const {classes, className} = props;
 
+  const [keyboardCases, setKeyboardCases] = useState([]);
+  const [selectedCase, setSelectedCase] = useState('');
+
   const rootClassName = classNames(classes.root, className);
 
-  return(
+
+  // EXAMPLE DATA - TO DELETE
+  const case1 = new Object();
+  case1.name = 'Bamboo case';
+  case1.description = 'Description of a Bamboo case';
+  case1.filename = 'bamboo_case.jpg';
+  case1.hoverText = 'case1 hover';
+
+  const case2 = new Object();
+  case2.name = 'Metal case';
+  case2.description = 'Description of a metal case';
+  case2.filename = 'metal_case.jpg';
+  case1.hoverText = 'case1 hover';
+
+  keyboardCases.push(case1);
+  keyboardCases.push(case2);
+  //--------------------------
+
+  return (
     <NavLayout>
-      <div className={classes.root}>
+      <div className={rootClassName}>
         <Grid
           className={classes.root}
           container
         >
           <Grid
             item
-            xs={6}
+            xs={4}
           >
-            <Grid
-              container
-              justify="center"
+            <Paper
+              className={classes.paper}
             >
-              <p>testwerwer</p>
-            </Grid>
+              <KeyboardPartSelector
+                keyboardCases={keyboardCases}
+                setSelectedCase={setSelectedCase}
+              />
+            </Paper>
           </Grid>
           <Grid
             item
-            xs={6}
+            xs={7}
           >
-            <Grid
-              container
-              justify="center"
+            <Paper
+              className={classes.paper}
             >
               <KeyboardBuilder/>
-            </Grid>
+            </Paper>
           </Grid>
         </Grid>
       </div>
