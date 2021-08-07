@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core';
-import styles from '../../styles';
+import styles from './styles';
+import {compose} from 'recompose';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import React, {useState} from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
+import {withTranslation} from 'react-i18next';
 
 
 function ComponentCard(props){
@@ -17,7 +19,7 @@ function ComponentCard(props){
   const rootClassName = classNames(classes.root, className);
 
   return(
-    <Card className={classNames(rootClassName, classes.card)}>
+    <Card className={rootClassName}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography
@@ -28,7 +30,7 @@ function ComponentCard(props){
           </Typography>
           <Typography
             color="textSecondary"
-            variant="subtitle1"
+            variant="subtitle2"
           >
             {component.description}
           </Typography>
@@ -50,4 +52,4 @@ ComponentCard.propTypes = {
   component: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ComponentCard);
+export default compose(withStyles(styles), withTranslation())(ComponentCard);

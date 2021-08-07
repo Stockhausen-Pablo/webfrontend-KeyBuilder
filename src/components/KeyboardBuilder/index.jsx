@@ -50,18 +50,19 @@ function Keyboard({url}) {
 
 function KeyboardBuilder(props){
 
-  const {classes, className} = props;
+  const {classes, className, selectedCase} = props;
 
   const rootClassName = classNames(classes.root, className);
 
   return(
     <div className={classNames(rootClassName, classes.canvas)}>
+      {selectedCase &&
       <Canvas
-        camera={{ position: [0, 0, 2.75] }}
+        camera={{position: [0, 0, 2.75]}}
         concurrent
         pixelRatio={[1, 2]}
       >
-        <ambientLight intensity={0.3} />
+        <ambientLight intensity={0.3}/>
         <spotLight
           angle={0.1}
           intensity={0.3}
@@ -69,7 +70,9 @@ function KeyboardBuilder(props){
           position={[5, 25, 20]}
         />
         <Suspense fallback={null}>
-          <Keyboard url={'/bamboo_case.glb'}/>
+          <Keyboard
+            url={selectedCase.modelname}
+          />
           <ContactShadows
             blur={2}
             far={1}
@@ -90,6 +93,7 @@ function KeyboardBuilder(props){
           minPolarAngle={0}
         />
       </Canvas>
+      }
     </div>
   )
 }
@@ -97,6 +101,7 @@ function KeyboardBuilder(props){
 KeyboardBuilder.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
+  selectedCase: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(KeyboardBuilder);

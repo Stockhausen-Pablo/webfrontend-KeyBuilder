@@ -27,17 +27,21 @@ function ModelBuilder(props) {
   case1.name = 'Bamboo case';
   case1.description = 'Description of a Bamboo case';
   case1.filename = 'bamboo_case.jpg';
+  case1.modelname = 'bamboo_case.glb';
   case1.hoverText = 'case1 hover';
 
   const case2 = new Object();
   case2.name = 'Metal case';
   case2.description = 'Description of a metal case';
   case2.filename = 'metal_case.jpg';
-  case1.hoverText = 'case1 hover';
+  case2.modelname = 'hard_plastic_case.glb';
+  case2.hoverText = 'case1 hover';
 
   keyboardCases.push(case1);
   keyboardCases.push(case2);
   //--------------------------
+
+  console.log(selectedCase);
 
   return (
     <NavLayout>
@@ -66,7 +70,9 @@ function ModelBuilder(props) {
             <Paper
               className={classes.paper}
             >
-              <KeyboardBuilder/>
+              <KeyboardBuilder
+                selectedCase={selectedCase}
+              />
             </Paper>
           </Grid>
         </Grid>

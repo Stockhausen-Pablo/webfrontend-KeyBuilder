@@ -48,9 +48,9 @@ function KeyboardPartSelector(props) {
         <Tab label="Lube" icon={<ThumbUp/>} {...a11yProps(7)} />
       </Tabs>
       <TabPanel
-        className={classes.tabPanel}
         components={keyboardCases}
         index={0}
+        setSelectedCase={setSelectedCase}
         value={value}
       />
     </div>
@@ -61,7 +61,7 @@ KeyboardPartSelector.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   keyboardCases: PropTypes.array.isRequired,
-  setSelectedCase: PropTypes.func.isRequired
+  setSelectedCase: PropTypes.func.isRequired,
 }
 
 export default withStyles(styles)(KeyboardPartSelector);

@@ -14,9 +14,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 
 function TabPanel(props){
-  const { classes, className, children, value, index, components, ...other} = props;
-
-  const rootClassName = classNames(classes.root, className);
+  const { classes, className, children, value, index, components, setSelectedCase, ...other} = props;
 
   const renderThumb = ({ style, ...props }) => {
     const thumbStyle = {
@@ -37,10 +35,12 @@ function TabPanel(props){
     />
   );
 
+  const rootClassName = classNames(classes.root, className);
+
   return (
     <div
       aria-labelledby={`vertical-tab-${index}`}
-      className={classNames(rootClassName, classes.selector)}
+      className={rootClassName}
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       role="tabpanel"
@@ -53,7 +53,6 @@ function TabPanel(props){
           autoHideTimeout={500}
         >
           <Box p={3}>
-
             <List
               className={classes.list}
             >
@@ -62,6 +61,7 @@ function TabPanel(props){
                   <ListItem
                     button
                     key={index}
+                    onClick={() => setSelectedCase(component)}
                   >
                     <ComponentCard
                       component={component}
@@ -84,6 +84,7 @@ TabPanel.propTypes = {
   classes: PropTypes.object.isRequired,
   components: PropTypes.array.isRequired,
   index: PropTypes.any.isRequired,
+  setSelectedCase: PropTypes.func.isRequired,
   value: PropTypes.any.isRequired,
 };
 
