@@ -11,9 +11,6 @@ export default theme => ({
   selector:{
     position: 'absolute',
     width: '33vw',
-    height: '58vh'
+    height: '75vh'
   },
-  tabPanel:{
-    width: '25vw',
-  }
 });

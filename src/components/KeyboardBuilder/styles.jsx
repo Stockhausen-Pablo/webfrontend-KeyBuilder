@@ -11,6 +11,6 @@ export default theme => ({
   canvas: {
     position: 'absolute',
     width: '64vw',
-    height: '58vh',
+    height: '75vh',
   }
 });

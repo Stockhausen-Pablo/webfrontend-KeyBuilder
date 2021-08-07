@@ -1,9 +1,7 @@
 export default theme => ({
   root: {
     display: 'flex',
-  },
-  card:{
-    width: '50%',
+    backgroundColor: '#7b797b',
   },
   details: {
     display: 'flex',
@@ -13,7 +11,6 @@ export default theme => ({
     flex: '1 0 auto',
   },
   media: {
-    height: 50,
-    width: '33%',
+    width: 51,
   },
 });
