@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core';
 import styles from './styles'
 import classNames from 'classnames';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabPanel from './components/TabPanel';
+
 
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import PropTypes from 'prop-types';
@@ -19,7 +20,9 @@ function a11yProps(index) {
 
 function KeyboardPartSelector(props) {
   const {classes, className, keyboardCases, setSelectedCase} = props;
+  const steps = ['Layout Selection', 'Part Selection'];
 
+  const [activeStep, setActiveStep] = useState(0);
   const [value, setValue] = React.useState(0);
 
   const rootClassName = classNames(classes.root, className);

@@ -1,6 +1,5 @@
 export default theme => ({
   root: {
-    backgroundColor: '#4a4848',
     overflow: 'auto',
     flexGrow: 1,
   },

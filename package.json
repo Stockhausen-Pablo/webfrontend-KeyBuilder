@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/styles": "^4.11.4",
     "@react-three/drei": "^3.7.0",
     "html-webpack-plugin": "^5.1.0",
     "valtio": "^0.7.0"

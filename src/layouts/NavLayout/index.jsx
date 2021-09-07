@@ -1,6 +1,5 @@
 import * as PropTypes from 'prop-types';
-import React, {Fragment, useState} from 'react';
-import classNames from 'classnames'
+import React, {Fragment} from 'react';
 import compose from 'recompose/compose'
 import styles from './styles'
 import {TopNavbar} from './components';

@@ -1,7 +1,6 @@
 export default theme => ({
   root: {
     display: 'flex',
-    backgroundColor: '#7b797b',
   },
   details: {
     display: 'flex',
