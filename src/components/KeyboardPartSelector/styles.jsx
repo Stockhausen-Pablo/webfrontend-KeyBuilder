@@ -1,7 +1,6 @@
 export default theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#424040',
     display: 'flex',
     height: 224,
   },

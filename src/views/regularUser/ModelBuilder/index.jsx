@@ -21,7 +21,6 @@ function ModelBuilder(props) {
 
   const rootClassName = classNames(classes.root, className);
 
-
   // EXAMPLE DATA - TO DELETE
   const case1 = new Object();
   case1.name = 'Bamboo case';

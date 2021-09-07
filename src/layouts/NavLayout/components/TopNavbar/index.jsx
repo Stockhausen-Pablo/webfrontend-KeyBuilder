@@ -1,14 +1,16 @@
 import React from 'react';
+import {withStyles} from '@material-ui/core';
 import { Navbar, Nav} from 'react-bootstrap';
-import classNames from 'classnames';
-import {compose} from 'recompose';
-import {withRouter} from 'react-router-dom';
+import styles from './styles'
+import PropTypes from 'prop-types';
 
 function TopNavbar(props){
+  const {classes} = props;
+
   return(
     <div>
       <Navbar
-        bg="dark"
+        className={classes.navbar}
         fixed="top"
         position="sticky"
         variant="dark"
@@ -31,4 +33,8 @@ function TopNavbar(props){
   )
 }
 
-export default compose(TopNavbar);
+TopNavbar.propTypes = {
+  classes: PropTypes.object.isRequired,
+}
+
+export default withStyles(styles)(TopNavbar);
