@@ -4,6 +4,7 @@ import compose from 'recompose/compose'
 import styles from './styles'
 import {TopNavbar} from './components';
 import {withStyles, withWidth} from '@material-ui/core';
+import Footer from './components/Footer';
 
 function NavLayout(props){
 
@@ -16,8 +17,8 @@ function NavLayout(props){
         className={classes.content}
       >
         {children}
+        <Footer className={classes.footer}/>
       </main>
-
     </Fragment>
   )
 }

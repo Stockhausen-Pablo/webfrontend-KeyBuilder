@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabPanel from './components/TabPanel';
-
+import PropTypes from 'prop-types';
 
 import ThumbUp from '@material-ui/icons/ThumbUp';
-import PropTypes from 'prop-types';
+
 
 
 function a11yProps(index) {
@@ -35,7 +35,9 @@ function KeyboardPartSelector(props) {
     <div className={classNames(rootClassName, classes.selector)}>
       <Tabs
         aria-label="Vertical tabs example"
+        centered
         className={classes.tabs}
+        indicatorColor="primary"
         onChange={handleChange}
         orientation="vertical"
         value={value}

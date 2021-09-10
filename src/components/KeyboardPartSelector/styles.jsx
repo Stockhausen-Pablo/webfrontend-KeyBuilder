@@ -5,11 +5,10 @@ export default theme => ({
     height: 224,
   },
   tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
   },
   selector:{
     position: 'absolute',
     width: '33vw',
-    height: '75vh'
+    height: '70vh'
   },
 });

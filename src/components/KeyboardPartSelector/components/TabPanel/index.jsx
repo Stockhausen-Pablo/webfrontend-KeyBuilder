@@ -10,30 +10,9 @@ import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import classNames from 'classnames';
 
-import { Scrollbars } from 'react-custom-scrollbars';
-
 
 function TabPanel(props){
   const { classes, className, children, value, index, components, setSelectedCase, ...other} = props;
-
-  const renderThumb = ({ style, ...props }) => {
-    const thumbStyle = {
-      borderRadius: 6,
-      backgroundColor: 'rgba(35, 49, 86, 0.8)'
-    };
-    return <div
-      style={{ ...style, ...thumbStyle }}
-      {...props}
-    />;
-  };
-
-  const CustomScrollbars = props => (
-    <Scrollbars
-      renderThumbHorizontal={renderThumb}
-      renderThumbVertical={renderThumb}
-      {...props}
-    />
-  );
 
   const rootClassName = classNames(classes.root, className);
 
@@ -47,32 +26,26 @@ function TabPanel(props){
       {...other}
     >
       {value === index && (
-        <CustomScrollbars
-          autoHide
-          autoHideDuration={200}
-          autoHideTimeout={500}
-        >
-          <Box p={3}>
-            <List
-              className={classes.list}
-            >
-              {components.map((component, index) => {
-                return(
-                  <ListItem
-                    button
-                    key={index}
-                    onClick={() => setSelectedCase(component)}
-                  >
-                    <ComponentCard
-                      component={component}
-                    />
-                  </ListItem>
-                )
-              })}
-            </List>
-            <Typography>{children}</Typography>
-          </Box>
-        </CustomScrollbars>
+        <Box p={1}>
+          <List
+            className={classes.list}
+          >
+            {components.map((component, index) => {
+              return(
+                <ListItem
+                  button
+                  key={index}
+                  onClick={() => setSelectedCase(component)}
+                >
+                  <ComponentCard
+                    component={component}
+                  />
+                </ListItem>
+              )
+            })}
+          </List>
+          <Typography>{children}</Typography>
+        </Box>
       )}
     </div>
   );

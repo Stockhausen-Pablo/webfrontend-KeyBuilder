@@ -6,6 +6,8 @@ export default theme => ({
   },
   paper: {
     textAlign: 'center',
+    height: '70vh',
+    backgroundColor: theme.palette.secondary.main
   },
   control: {
     padding: theme.spacing(2),

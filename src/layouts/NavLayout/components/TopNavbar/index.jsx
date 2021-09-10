@@ -19,9 +19,9 @@ function TopNavbar(props){
                    Test
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Kategorie 1</Nav.Link>
-          <Nav.Link href="#features">Kategorie 2</Nav.Link>
-          <Nav.Link href="#pricing">Kategorie 3</Nav.Link>
+          <Nav.Link href="/builder">Builder</Nav.Link>
+          <Nav.Link href="/catalogs">Catalogs</Nav.Link>
+          <Nav.Link href="/contact">Contact</Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>

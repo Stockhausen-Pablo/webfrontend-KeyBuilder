@@ -16,9 +16,9 @@ export default {
   },
   secondary: {
     contrastText: white,
-    main: '#0C655B',
+    main: '#F2F4F4',
     light: '',
-    dark: '#003228'
+    dark: '#575957'
   },
   success: {
     contrastText: white,
@@ -56,7 +56,12 @@ export default {
     paper: white
   },
   neutral: {
-    main: '#5c6ac4',
+    main: '#b8c0f5',
+  },
+  navbar:{
+    main: '#1070CA',
+    footerRight: '#26d8a3',
+    topperRight: '#b32a2a'
   },
   border: '#DFE3E8',
   divider: '#DFE3E8',
