@@ -1,6 +1,7 @@
 export default theme => ({
   root: {
     display: 'flex',
+    width: '18vw'
   },
   details: {
     display: 'flex',
@@ -10,6 +11,6 @@ export default theme => ({
     flex: '1 0 auto',
   },
   media: {
-    width: 51,
+    width: '7vw',
   },
 });

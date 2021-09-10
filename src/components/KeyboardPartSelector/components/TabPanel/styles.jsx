@@ -4,11 +4,18 @@ export default theme => ({
   },
   list:{
     position: 'relative',
-    maxHeight: '55vh',
-  },
-  listItem: {
-    display: 'flex',
-    width: '75%',
-    height: '75%'
+    overflow: 'auto',
+    maxHeight: '60vh',
+    '&::-webkit-scrollbar': {
+      width: '0.4em'
+    },
+    '&::-webkit-scrollbar-track': {
+      boxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)',
+      webkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)'
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(35, 49, 86, 0.8)',
+      borderRadius: 6,
+    }
   },
 });

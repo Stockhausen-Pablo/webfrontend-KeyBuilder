@@ -11,6 +11,7 @@ import NavLayout from '../../../layouts/NavLayout';
 
 import Paper from '@material-ui/core/Paper';
 import KeyboardPartSelector from '../../../components/KeyboardPartSelector';
+import Box from '@material-ui/core/Box';
 
 function ModelBuilder(props) {
 
@@ -45,36 +46,36 @@ function ModelBuilder(props) {
   return (
     <NavLayout>
       <div className={rootClassName}>
-        <Grid
-          className={classes.root}
-          container
+        <Box
+          component="span"
+          m={1}
         >
-          <Grid
-            item
-            xs={4}
+          <Paper
+            className={classes.paper}
+            variant="outlined"
           >
-            <Paper
-              className={classes.paper}
+            <Grid
+              className={classes.root}
+              container
             >
-              <KeyboardPartSelector
-                keyboardCases={keyboardCases}
-                setSelectedCase={setSelectedCase}
-              />
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={7}
-          >
-            <Paper
-              className={classes.paper}
-            >
-              <KeyboardBuilder
-                selectedCase={selectedCase}
-              />
-            </Paper>
-          </Grid>
-        </Grid>
+              <Grid
+                item
+                xs={4}
+              >
+                <KeyboardPartSelector
+                  keyboardCases={keyboardCases}
+                  setSelectedCase={setSelectedCase}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={7}
+              >
+                test
+              </Grid>
+            </Grid>
+          </Paper>
+        </Box>
       </div>
     </NavLayout>
   )

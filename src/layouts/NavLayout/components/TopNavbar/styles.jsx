@@ -1,7 +1,5 @@
 export default theme => ({
-  root: {
-  },
   navbar:{
-    backgroundColor: theme.palette.primary.main
+    background: `linear-gradient(to right, ${theme.palette.navbar.main}, ${theme.palette.navbar.topperRight});`
   }
 });
