@@ -31,10 +31,10 @@ function ModelBuilder(props) {
   case1.hoverText = 'case1 hover';
 
   const case2 = new Object();
-  case2.name = 'Metal case';
-  case2.description = 'Description of a metal case';
+  case2.name = 'Tofu60';
+  case2.description = 'Tofu60 Aluminium Case';
   case2.filename = 'metal_case.jpg';
-  case2.modelname = 'hard_plastic_case.glb';
+  case2.modelname = 'case_tofu60_alumiunum_test.glb';
   case2.hoverText = 'case1 hover';
 
   keyboardCases.push(case1);
@@ -71,7 +71,9 @@ function ModelBuilder(props) {
                 item
                 xs={7}
               >
-                test
+                <KeyboardBuilder
+                  selectedCase={selectedCase}
+                />
               </Grid>
             </Grid>
           </Paper>
