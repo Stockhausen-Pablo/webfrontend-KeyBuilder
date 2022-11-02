@@ -2,13 +2,11 @@ export default theme => ({
   root: {
     flexGrow: 1,
     display: 'flex',
-    height: 224,
-  },
-  tabs: {
+    height: '100%',
   },
   selector:{
     position: 'absolute',
     width: '33vw',
-    height: '70vh'
+    maxHeight: '90vh',
   },
 });

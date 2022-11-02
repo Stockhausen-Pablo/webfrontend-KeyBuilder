@@ -15,8 +15,11 @@ function TopNavbar(props){
         position="sticky"
         variant="dark"
       >
-        <Navbar.Brand href="/builder">
-                   Test
+        <Navbar.Brand
+          className={classes.leftStart}
+          href="/"
+        >
+          KeyBuilder
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/builder">Builder</Nav.Link>
@@ -24,7 +27,7 @@ function TopNavbar(props){
           <Nav.Link href="/contact">Contact</Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text className={classes.rightEnd}>
                        Signed in as: <a href="#login">Test User</a>
           </Navbar.Text>
         </Navbar.Collapse>

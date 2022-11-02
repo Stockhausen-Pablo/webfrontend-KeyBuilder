@@ -4,14 +4,13 @@ export default theme => ({
     padding: theme.spacing(2),
     flexGrow: 1,
     height: '100vh',
+    weight: '100vw',
     minHeight: '100%'
   },
-  paper: {
-    textAlign: 'center',
-    height: '100%',
-    backgroundColor: theme.palette.secondary.main
-  },
-  control: {
-    padding: theme.spacing(2),
+  box: {
+    paddingTop: '5em',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });

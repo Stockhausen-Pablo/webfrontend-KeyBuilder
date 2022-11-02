@@ -12,7 +12,7 @@ function NavLayout(props){
 
   return(
     <Fragment>
-      <TopNavbar className={classes.topnavbar}/>
+      <TopNavbar className={classes.topNavbar}/>
       <main
         className={classes.content}
       >
@@ -24,6 +24,7 @@ function NavLayout(props){
 }
 
 NavLayout.propTypes = {
+  children: PropTypes.object,
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
 }

@@ -2,7 +2,7 @@ import React, { Suspense, useRef} from 'react'
 import {withStyles} from '@material-ui/core';
 import styles from './styles'
 
-import { Canvas, useFrame } from 'react-three-fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { ContactShadows, useGLTF, OrbitControls } from '@react-three/drei';
 import { proxy } from 'valtio'
 import classNames from 'classnames';
