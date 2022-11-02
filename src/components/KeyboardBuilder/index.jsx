@@ -24,8 +24,10 @@ const state = proxy({
 })
 
 function Keyboard({url}) {
+
   const mesh = useRef();
   const gltf = useGLTF(url, true);
+  const gltf2 = useGLTF('keycap.glb', true);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
@@ -34,6 +36,10 @@ function Keyboard({url}) {
     mesh.current.rotation.y = Math.sin(t / 4) / 8
     mesh.current.position.y = (1 + Math.sin(t / 0.5)) / 10
   })
+
+  gltf.scene.add(gltf2.scene);
+
+  console.log(gltf);
 
   return (
     <mesh
@@ -50,13 +56,15 @@ function Keyboard({url}) {
 
 function KeyboardBuilder(props){
 
-  const {classes, className, selectedCase} = props;
+  const {classes, className, keyboardBuild} = props;
+
+  console.log(keyboardBuild);
 
   const rootClassName = classNames(classes.root, className);
 
   return(
     <div className={classNames(rootClassName, classes.canvas)}>
-      {selectedCase &&
+      {keyboardBuild &&
       <Canvas
         camera={{position: [0, 0, 2.75]}}
         concurrent
@@ -71,7 +79,7 @@ function KeyboardBuilder(props){
         />
         <Suspense fallback={null}>
           <Keyboard
-            url={selectedCase.modelname}
+            url={keyboardBuild.keyboardCase ? keyboardBuild.keyboardCase.modelname : 'shoe-draco.glb'}
           />
           <ContactShadows
             blur={2}
@@ -101,7 +109,7 @@ function KeyboardBuilder(props){
 KeyboardBuilder.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
-  selectedCase: PropTypes.object.isRequired,
+  keyboardBuild: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(KeyboardBuilder);

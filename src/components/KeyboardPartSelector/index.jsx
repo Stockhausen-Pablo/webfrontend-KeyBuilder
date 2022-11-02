@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
 
-
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
@@ -19,7 +18,7 @@ function a11yProps(index) {
 }
 
 function KeyboardPartSelector(props) {
-  const {classes, className, keyboardCases, setSelectedCase} = props;
+  const {classes, className, keyboardCases, setSelectedCase, switches, setSelectedSwitches} = props;
 
   const [value, setValue] = React.useState(0);
 
@@ -33,7 +32,6 @@ function KeyboardPartSelector(props) {
     <div className={classNames(rootClassName, classes.selector)}>
       <Tabs
         aria-label="Vertical tabs"
-        centered
         indicatorColor="primary"
         onChange={handleChange}
         orientation="vertical"
@@ -53,7 +51,13 @@ function KeyboardPartSelector(props) {
       <TabPanel
         components={keyboardCases}
         index={0}
-        setSelectedCase={setSelectedCase}
+        setSelectedObject={setSelectedCase}
+        value={value}
+      />
+      <TabPanel
+        components={switches}
+        index={1}
+        setSelectedObject={setSelectedSwitches}
         value={value}
       />
     </div>
@@ -65,6 +69,8 @@ KeyboardPartSelector.propTypes = {
   classes: PropTypes.object.isRequired,
   keyboardCases: PropTypes.array.isRequired,
   setSelectedCase: PropTypes.func.isRequired,
+  setSelectedSwitches: PropTypes.func.isRequired,
+  switches: PropTypes.array.isRequired,
 }
 
 export default withStyles(styles)(KeyboardPartSelector);

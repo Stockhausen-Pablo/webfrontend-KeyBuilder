@@ -12,7 +12,7 @@ import classNames from 'classnames';
 
 
 function TabPanel(props){
-  const { classes, className, children, value, index, components, setSelectedCase, ...other} = props;
+  const { classes, className, children, value, index, components, setSelectedObject, ...other} = props;
 
   const rootClassName = classNames(classes.root, className);
 
@@ -35,7 +35,7 @@ function TabPanel(props){
                 <ListItem
                   button
                   key={index}
-                  onClick={() => setSelectedCase(component)}
+                  onClick={() => setSelectedObject(component)}
                 >
                   <ComponentCard
                     component={component}
