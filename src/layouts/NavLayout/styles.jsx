@@ -1,5 +1,5 @@
 export default theme => ({
-  topnavbar: {
+  topNavbar: {
     position: 'fixed',
     width: '100%',
     top: 0,
@@ -13,7 +13,9 @@ export default theme => ({
     marginTop: '64px',
     minHeight: 'calc(-145px + 100vh)',
     position: 'relative',
-    paddingBottom: '5rem',
+    paddingBottom: '1rem',
+    paddingTop: '1rem',
+    //backgroundColor: theme.palette.background.dark
   },
   contentShift: {
     marginLeft: '270px'

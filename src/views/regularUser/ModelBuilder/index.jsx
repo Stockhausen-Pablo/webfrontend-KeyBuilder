@@ -11,7 +11,7 @@ import NavLayout from '../../../layouts/NavLayout';
 
 import Paper from '@material-ui/core/Paper';
 import KeyboardPartSelector from '../../../components/KeyboardPartSelector';
-import Box from '@material-ui/core/Box';
+
 
 function ModelBuilder(props) {
 
@@ -34,50 +34,44 @@ function ModelBuilder(props) {
   case2.name = 'Tofu60';
   case2.description = 'Tofu60 Aluminium Case';
   case2.filename = 'metal_case.jpg';
-  case2.modelname = 'case_tofu60_alumiunum_test.glb';
+  //case2.modelname = 'case_tofu60_alumiunum_test.glb';
+  case2.modelname = 'hard_plastic_case.glb';
   case2.hoverText = 'case1 hover';
 
   keyboardCases.push(case1);
   keyboardCases.push(case2);
   //--------------------------
 
-  console.log(selectedCase);
-
   return (
     <NavLayout>
       <div className={rootClassName}>
-        <Box
-          component="span"
-          m={1}
+        <Paper
+          className={classes.paper}
+          variant="outlined"
         >
-          <Paper
-            className={classes.paper}
-            variant="outlined"
+          <Grid
+            className={classes.root}
+            container
           >
             <Grid
-              className={classes.root}
-              container
+              item
+              xs={4}
             >
-              <Grid
-                item
-                xs={4}
-              >
-                <KeyboardPartSelector
-                  keyboardCases={keyboardCases}
-                  setSelectedCase={setSelectedCase}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={7}
-              >
-                <KeyboardBuilder
-                  selectedCase={selectedCase}
-                />
-              </Grid>
+              <KeyboardPartSelector
+                keyboardCases={keyboardCases}
+                setSelectedCase={setSelectedCase}
+              />
             </Grid>
-          </Paper>
-        </Box>
+            <Grid
+              item
+              xs={7}
+            >
+              <KeyboardBuilder
+                selectedCase={selectedCase}
+              />
+            </Grid>
+          </Grid>
+        </Paper>
       </div>
     </NavLayout>
   )

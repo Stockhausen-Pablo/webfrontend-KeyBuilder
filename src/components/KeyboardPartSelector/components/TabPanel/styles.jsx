@@ -5,7 +5,7 @@ export default theme => ({
   list:{
     position: 'relative',
     overflow: 'auto',
-    maxHeight: '60vh',
+    maxHeight: '90vh',
     '&::-webkit-scrollbar': {
       width: '0.4em'
     },

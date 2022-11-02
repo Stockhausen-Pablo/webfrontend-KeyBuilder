@@ -20,9 +20,7 @@ function a11yProps(index) {
 
 function KeyboardPartSelector(props) {
   const {classes, className, keyboardCases, setSelectedCase} = props;
-  const steps = ['Layout Selection', 'Part Selection'];
 
-  const [activeStep, setActiveStep] = useState(0);
   const [value, setValue] = React.useState(0);
 
   const rootClassName = classNames(classes.root, className);
@@ -34,9 +32,8 @@ function KeyboardPartSelector(props) {
   return (
     <div className={classNames(rootClassName, classes.selector)}>
       <Tabs
-        aria-label="Vertical tabs example"
+        aria-label="Vertical tabs"
         centered
-        className={classes.tabs}
         indicatorColor="primary"
         onChange={handleChange}
         orientation="vertical"
@@ -51,6 +48,7 @@ function KeyboardPartSelector(props) {
         <Tab label="USB-Cable" icon={<ThumbUp/>} {...a11yProps(5)} />
         <Tab label="Dampening" icon={<ThumbUp/>} {...a11yProps(6)} />
         <Tab label="Lube" icon={<ThumbUp/>} {...a11yProps(7)} />
+        <Tab label="Mods" icon={<ThumbUp/>} {...a11yProps(8)} />
       </Tabs>
       <TabPanel
         components={keyboardCases}
